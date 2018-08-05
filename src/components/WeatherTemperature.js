@@ -1,11 +1,13 @@
 import React from 'react';
 import WeatherIcons from 'react-weathericons';
+import PropTypes from 'prop-types';
 import {DAYCLOUDYHIGH,
         DAYLIGHTWIND,
         DAYSLEET,
         DATHAZE,
         NA,
         DAYSUNNY } from './../constants/weathers';
+
 
 const stateToIconName = (weaterState) =>{
     console.log(weaterState);
@@ -40,5 +42,12 @@ const WeatherTemperature = ({temperature,weaterState}) => (
        
     </div>
 );
+
+WeatherTemperature.PropTypes = {
+    temperature: PropTypes.number,
+    weaterState: PropTypes.string.isRequired,
+
+};
+
 
 export default WeatherTemperature;
