@@ -16,14 +16,9 @@ const data1 = {
     humidity:10
 }
 
-const data2 = {
-    temperature:5,
-    weaterState:DATHAZE,
-    wind:180,
-    humidity:3
-}
-
-
+const LOCATION = 'Las Rozas';
+const APIKEY = '56de15b6daff254297d54efac8a85d46';
+const APIWEATHER = `http://api.openweathermap.org/data/2.5/weather?q=${LOCATION}&appid=${APIKEY}`;
 
 class WeatherLocation extends Component {
     
@@ -35,10 +30,37 @@ class WeatherLocation extends Component {
         };
     }
 
+    getWeatherState = () =>{
+         return DAYSLEET;   
+    } 
+    getData = (weatherData) => {
+        const {humidity,temp} = weatherData.main;
+        console.log('Humidity: '+humidity);
+        console.log('Humidity: '+temp);
+        const {speed} = weatherData.wind;
+        const weatherState = this.getWeatherState();
+        const data = {
+            temperature:temp,
+            weatherState,
+            humidity,
+            wind:`${speed}`,
+           
+            
+        }
+        return data; 
+    }; 
+
+   
     handleUpdateClick = () =>{
-         this.setState ({
-            data:data2
+        fetch(APIWEATHER).then(data => {
+          console.log(data);
+          return data.json();
+        }).then(weatherData => {
+            console.log('WeatherData: '+weatherData);
+            const data = this.getData(weatherData);
+            this.setState({data});
         });
+      
         console.log("Acualiza");
     }
 
@@ -51,6 +73,6 @@ class WeatherLocation extends Component {
         <button onClick={this.handleUpdateClick}>Actualizar</button>
     </div>)
  }
-}; // en class
+}; // end class
 
 export default WeatherLocation;

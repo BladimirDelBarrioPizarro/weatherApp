@@ -10,7 +10,7 @@ import {DAYCLOUDYHIGH,
 import './../../style/style.css';
 
 const stateToIconName = (weaterState) =>{
-    console.log(weaterState);
+    console.log('stateToIconName: '+weaterState);
     
     switch(weaterState){
         case DAYCLOUDYHIGH:
