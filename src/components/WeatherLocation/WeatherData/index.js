@@ -1,13 +1,6 @@
 import React from 'react';
 import WeatherExtraInfo from './WeatherExtraInfo';
 import WeatherTemperature from './WeatherTemperature';
-import {DAYCLOUDYHIGH,
-        DAYLIGHTWIND,
-        DAYSLEET,
-        DATHAZE,
-        NA,
-        DAYSUNNY } from './../../../constants/weathers';
-
 import './../../style/style.css';
 import PropTypes from 'prop-types';        
 

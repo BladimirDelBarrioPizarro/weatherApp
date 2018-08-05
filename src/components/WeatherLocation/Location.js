@@ -8,6 +8,7 @@ import {DAYCLOUDYHIGH,
         NA,
         DAYSUNNY } from './../../constants/weathers';
 
+
 const Location = ({city}) => {
     
     return(
