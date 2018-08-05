@@ -8,8 +8,10 @@ import {DAYCLOUDYHIGH,
         NA,
         DAYSUNNY } from './../../../constants/weathers';
 
+import './style.css';        
+
 const WeatherData = () => (
-    <div>
+    <div className='weatherDataCont'>
         <WeatherTemperature temperature={35} weaterState={NA}></WeatherTemperature>
         <WeatherExtraInfo humidity={80} wind={10}></WeatherExtraInfo>
     </div>
