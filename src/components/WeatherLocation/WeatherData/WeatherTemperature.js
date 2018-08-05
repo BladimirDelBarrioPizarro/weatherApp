@@ -6,7 +6,7 @@ import {DAYCLOUDYHIGH,
         DAYSLEET,
         DATHAZE,
         NA,
-        DAYSUNNY } from './../constants/weathers';
+        DAYSUNNY } from './../../../constants/weathers';
 
 
 const stateToIconName = (weaterState) =>{

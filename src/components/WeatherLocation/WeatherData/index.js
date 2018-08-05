@@ -6,12 +6,12 @@ import {DAYCLOUDYHIGH,
         DAYSLEET,
         DATHAZE,
         NA,
-       DAYSUNNY } from './../constants/weathers';
+        DAYSUNNY } from './../../../constants/weathers';
 
 const WeatherData = () => (
     <div>
         <WeatherTemperature temperature={35} weaterState={NA}></WeatherTemperature>
-        <WeatherExtraInfo humidity={80} wind={'10m/s'}></WeatherExtraInfo>
+        <WeatherExtraInfo humidity={80} wind={10}></WeatherExtraInfo>
     </div>
 );
 
