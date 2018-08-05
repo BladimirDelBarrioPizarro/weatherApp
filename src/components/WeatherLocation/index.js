@@ -36,7 +36,6 @@ class WeatherLocation extends Component {
     getData = (weatherData) => {
         const {humidity,temp} = weatherData.main;
         console.log('Humidity: '+humidity);
-        console.log('Humidity: '+temp);
         const {speed} = weatherData.wind;
         const weatherState = this.getWeatherState();
         const data = {
