@@ -1,0 +1,38 @@
+*{
+	font-family: 'Sunflower', sans-serif;
+}
+
+.weatherDataCont{
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	flex-direction:column;
+	flex-wrap:wrap;
+	
+	
+}
+
+.weatherExtraInfoCont{
+	background-color:#fff;
+	width: 10em;
+	
+	
+}
+
+.weatherExtraInfoCont span{
+	margin:1em;
+	font-weight:bold;
+}
+
+.weatherTemperatureCont{
+	background-color:#fff;
+	width: 10em;
+	height:8em;
+
+}
+
+.weatherTemperatureCont span{
+	font-size:1.5em;
+	color:grey;	
+	
+}

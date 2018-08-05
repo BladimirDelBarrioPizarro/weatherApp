@@ -7,7 +7,7 @@ import {DAYCLOUDYHIGH,
         DATHAZE,
         NA,
         DAYSUNNY } from './../../../constants/weathers';
-import './style.css';
+import './../../style/style.css';
 
 const stateToIconName = (weaterState) =>{
     console.log(weaterState);
@@ -37,9 +37,8 @@ const getWeatherIcon = (weaterState) => {
 
 const WeatherTemperature = ({temperature,weaterState}) => (
     <div className='weatherTemperatureCont'>
-        {getWeatherIcon(weaterState)} <br/><br/>
-       <span>{`${temperature} C`}</span>     
-       
+       {getWeatherIcon(weaterState)}  <br/><br/>
+       <span>{`${temperature} Grados`}</span>     
     </div>
 );
 
