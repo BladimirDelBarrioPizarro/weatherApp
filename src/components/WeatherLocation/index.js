@@ -8,6 +8,7 @@ import {DAYCLOUDYHIGH,
         DATHAZE,
         NA,
         DAYSUNNY } from './../../constants/weathers';
+import convert from 'convert-units';
 
 const data1 = {
     temperature:35,
@@ -18,8 +19,8 @@ const data1 = {
 
 const LOCATION = 'Las Rozas';
 const APIKEY = '56de15b6daff254297d54efac8a85d46';
+//const APIWEATHER = `http://api.openweathermap.org/data/2.5/weather?q=${LOCATION}&appid=${APIKEY}&units=metric`;
 const APIWEATHER = `http://api.openweathermap.org/data/2.5/weather?q=${LOCATION}&appid=${APIKEY}`;
-
 class WeatherLocation extends Component {
     
     constructor(){
@@ -32,20 +33,29 @@ class WeatherLocation extends Component {
 
     getWeatherState = () =>{
          return DAYSLEET;   
-    } 
+    }
+    getTemp = (kelvin) =>{
+        console.log('Kelvin: '+kelvin)
+        console.log('Convert: '+convert(kelvin).from('K').to('C').toFixed(2));
+        return convert(kelvin).from('K').to('C').toFixed(2);    
+    }
+    
     getData = (weatherData) => {
         const {humidity,temp} = weatherData.main;
         console.log('Humidity: '+humidity);
         const {speed} = weatherData.wind;
         const weatherState = this.getWeatherState();
+        const temperature = this.getTemp(temp);
+        console.log('Temperature: '+temperature);
         const data = {
-            temperature:temp,
+            temperature,
             weatherState,
             humidity,
             wind:`${speed}`,
-           
+          
             
         }
+        ;
         return data; 
     }; 
 
