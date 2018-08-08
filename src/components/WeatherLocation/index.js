@@ -4,19 +4,7 @@ import WeatherData from './WeatherData/index';
 import './../style/style.css';
 import transformWeather from './../../services/transformWeather';
 
-import {DAYCLOUDYHIGH,
-        DAYLIGHTWIND,
-        DAYSLEET,
-        DATHAZE,
-        NA,
-        DAYSUNNY } from './../../constants/weathers';
 
-const data1 = {
-    temperature:35,
-    weaterState:DAYSUNNY,
-    wind:80,
-    humidity:10
-}
 
 const LOCATION = 'Las Rozas';
 const APIKEY = '56de15b6daff254297d54efac8a85d46';
@@ -29,7 +17,7 @@ class WeatherLocation extends Component {
         super();
         this.state = {
             city:'Las Rozas',
-            data:data1
+            data:null
         };
         console.log('CONSTRUCTOR');
     }
@@ -38,10 +26,10 @@ class WeatherLocation extends Component {
    
     handleUpdateClick = () =>{
         fetch(APIWEATHER).then(data => {
-          console.log(data);
+          console.log('handleUpdateClick data: '+data);
           return data.json();
         }).then(weatherData => {
-            console.log('WeatherData: '+weatherData);
+            console.log('handleUpdateClick weatherData: '+weatherData);
             const data = transformWeather(weatherData);
             this.setState({data});
         });
@@ -50,6 +38,7 @@ class WeatherLocation extends Component {
     }
  componentWillMount(){
      console.log('componentWillMount');
+     this.handleUpdateClick();
  }
  componentDidMount(){
      console.log('componentDidMount');
@@ -60,13 +49,13 @@ class WeatherLocation extends Component {
  componentDidUpdate(){
      console.log('componentDidUpdate');
  }
+ //Operador ternario si data es distinto de null muestra el mensaje
  render = () => {
      const {city,data} = this.state;
      return(
         <div className='weatherLocationCont'>
         <Location city={city}></Location>
-        <WeatherData data={data}></WeatherData>
-        <button onClick={this.handleUpdateClick}>Actualizar</button>
+        { data ? <WeatherData data={data}></WeatherData> : 'Cargando... '}
     </div>)
     console.log('RENDER');
  }
