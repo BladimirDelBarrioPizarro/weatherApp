@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import CircularProgress from 'material-ui/CircularProgress';
 import { Preloader } from 'react-materialize';
 import Location from './Location';
 import WeatherData from './WeatherData/index';
@@ -56,7 +57,7 @@ class WeatherLocation extends Component {
      return(
         <div className='weatherLocationCont'>
         <Location city={city}></Location>
-        { data ? <WeatherData data={data}></WeatherData> : <Preloader size='big'/>}
+        { data ? <WeatherData data={data}></WeatherData> : <Preloader size='big'/> }
     </div>)
     console.log('RENDER');
  }

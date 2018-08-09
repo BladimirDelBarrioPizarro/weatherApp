@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import logo from './logo.svg';
 import './App.css';
 import WeatherLocation from './components/WeatherLocation';
@@ -6,6 +7,8 @@ import WeatherLocation from './components/WeatherLocation';
 class App extends Component {
   render() {
     return (
+    
+  <MuiThemeProvider>
       <div className="App">
        <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
@@ -15,6 +18,7 @@ class App extends Component {
         </p>
        <WeatherLocation></WeatherLocation>
       </div>
+    </MuiThemeProvider>
     );
   }
 }
