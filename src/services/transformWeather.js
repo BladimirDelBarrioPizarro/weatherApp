@@ -27,7 +27,7 @@ import convert from 'convert-units';
             return NA;
         }
         else{
-            return DAYSUNNY; 
+            return DATHAZE; 
         }
          return DATHAZE;   
     }

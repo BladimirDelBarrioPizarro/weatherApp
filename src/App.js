@@ -5,6 +5,13 @@ import './App.css';
 
 import LocationList from './components/LocationList';
 
+
+const cities =  [
+  'Madrid,es',
+  'Barcelona,es',
+  'Aranda de Duero,es'
+];
+
 class App extends Component {
   render() {
     return (
@@ -13,7 +20,7 @@ class App extends Component {
       <div className="App">
         <p className="App-intro">
         </p>
-       <LocationList/>
+       <LocationList cities={cities}/>
       </div>
     </MuiThemeProvider>
     );
