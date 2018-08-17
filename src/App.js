@@ -7,8 +7,8 @@ import WeatherLocation from './components/WeatherLocation';
 class App extends Component {
   render() {
     return (
-    
-  <MuiThemeProvider>
+  
+    <MuiThemeProvider>
       <div className="App">
        <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
