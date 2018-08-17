@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import logo from './logo.svg';
 import './App.css';
-import WeatherLocation from './components/WeatherLocation';
+
+import LocationList from './components/LocationList';
 
 class App extends Component {
   render() {
@@ -16,7 +17,7 @@ class App extends Component {
         </header>
         <p className="App-intro">
         </p>
-       <WeatherLocation></WeatherLocation>
+       <LocationList/>
       </div>
     </MuiThemeProvider>
     );
