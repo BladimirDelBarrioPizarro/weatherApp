@@ -1,26 +1,30 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import logo from './logo.svg';
 import './App.css';
 
 import LocationList from './components/LocationList';
 
 
 const cities =  [
-  'Madrid,es',
+  'Las Rozas,es',
   'Barcelona,es',
   'Aranda de Duero,es'
 ];
 
 class App extends Component {
+  //Manejador de evento
+  handleSelectedLocation = city => {
+    console.log(`handleSelectionLocation ${city}`);
+  }
+   
   render() {
     return (
-  
-    <MuiThemeProvider>
+     
+    <MuiThemeProvider>r>
       <div className="App">
         <p className="App-intro">
         </p>
-       <LocationList cities={cities}/>
+       <LocationList cities={cities} onSelectedLocation={this.handleSelectedLocation}/>
       </div>
     </MuiThemeProvider>
     );

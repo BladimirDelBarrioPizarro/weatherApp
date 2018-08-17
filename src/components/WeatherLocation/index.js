@@ -55,9 +55,10 @@ class WeatherLocation extends Component {
  }
  //Operador ternario si data es distinto de null muestra el mensaje
  render = () => {
+     const {onWeatherLocationClick} = this.props;
      const {city,data} = this.state;
      return(
-        <div className='weatherLocationCont'>
+        <div className='weatherLocationCont' onClick={onWeatherLocationClick}>
         <Location city={city}></Location>
         { data ? <WeatherData data={data}></WeatherData> : <Preloader size='big'/> }
     </div>)
@@ -67,5 +68,6 @@ class WeatherLocation extends Component {
 
 WeatherLocation.PropTypes = {
     city: PropTypes.string,
+    onWeatherLocationClick:PropTypes.func,
 }
 export default WeatherLocation;
