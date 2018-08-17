@@ -6,7 +6,9 @@ import {DAYCLOUDYHIGH,
         DAYSLEET,
         DATHAZE,
         NA,
-        DAYSUNNY } from './../../../constants/weathers';
+        DAYSUNNY,
+        THUNDER,
+        DRIZZLE } from './../../../constants/weathers';
 import './../../style/style.css';
 
 const stateToIconName = (weaterState) =>{
@@ -25,6 +27,10 @@ const stateToIconName = (weaterState) =>{
         return  "na";
         case DAYSUNNY:
         return "day-sunny";
+        case THUNDER:
+        return "day-thunderstrom";
+        case DRIZZLE:
+        return "day-showers"; 
         default:
         return  "day-sunny";
     }
