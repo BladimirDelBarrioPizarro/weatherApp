@@ -14,12 +14,19 @@ const cities =  [
 ];
 
 class App extends Component {
+
+     constructor(){
+         super();
+         this.state = {city:'Nueva ciudad'};
+     }
+
   //Manejador de evento
   handleSelectedLocation = city => {
     console.log(`handleSelectionLocation ${city}`);
   }
    
   render() {
+    const {city} = this.state;
     return (
      
     <MuiThemeProvider> 
@@ -35,7 +42,9 @@ class App extends Component {
           </Col>
            <Col xs={12} md={6} lg={5}>
            <Paper zDepth={4}>
-            <div className="detail"><ForecastExtended></ForecastExtended></div>
+            <div className="detail">
+              <ForecastExtended city={city}></ForecastExtended>
+              </div>
            </Paper>   
           </Col>
         </Row>
