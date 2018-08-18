@@ -1,7 +1,7 @@
 import React from 'react';
 import WeatherLocation from './WeatherLocation';
 import PropTypes from 'prop-types';
-
+import './style/style.css';
 
 const LocationList = ({cities,onSelectedLocation}) =>{
 

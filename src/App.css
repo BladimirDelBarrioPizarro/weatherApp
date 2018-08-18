@@ -29,8 +29,16 @@
 }
 
 .detail{
-	background:#999;
+	background:#fff;
 	height:100vh;
 	width:90%;
 	margin-top:1em;
+}
+
+@media (max-width:48em){
+	.detail{
+		max-height: 50vh;
+		overflow:auto;
+        margin-bottom:2em;	
+	}
 }
