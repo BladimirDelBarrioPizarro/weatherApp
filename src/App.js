@@ -5,10 +5,10 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
 import LocationList from './components/LocationList';
-
+import ForecastExtended from './components/ForecastExtended';
 
 const cities =  [
-  'Campillo de Aranda,es',
+  'Las Rozas,es',
   'Barcelona,es',
   'Aranda de Duero,es'
 ];
@@ -35,7 +35,7 @@ class App extends Component {
           </Col>
            <Col xs={12} md={6} lg={5}>
            <Paper zDepth={4}>
-            <div className="detail">detail</div>
+            <div className="detail"><ForecastExtended></ForecastExtended></div>
            </Paper>   
           </Col>
         </Row>
