@@ -22,6 +22,7 @@ class App extends Component {
 
   //Manejador de evento
   handleSelectedLocation = city => {
+    this.setState({ city })
     console.log(`handleSelectionLocation ${city}`);
   }
    
