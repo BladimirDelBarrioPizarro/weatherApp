@@ -22,16 +22,14 @@ class App extends Component {
     return (
      
     <MuiThemeProvider>
-     {/* <div className="App">
-        <p className="App-intro">
-        </p>
-       <LocationList cities={cities} onSelectedLocation={this.handleSelectedLocation}/>
-    </div>*/}
-
+    
      <Grid fluid>
         <Row>
-          <Col lg={11}>
+          <Col xs={12} md={6} lg={5}>
              <LocationList cities={cities} onSelectedLocation={this.handleSelectedLocation}/>
+          </Col>
+           <Col xs={12} md={6} lg={5}>
+            <div className="detail">detail</div>   
           </Col>
         </Row>
       </Grid>

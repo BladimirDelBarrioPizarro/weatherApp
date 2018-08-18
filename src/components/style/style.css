@@ -1,5 +1,6 @@
 *{
 	font-family: 'Sunflower', sans-serif;
+	
 }
 
 .weatherLocationCont{
@@ -10,8 +11,7 @@
 	flex-wrap:wrap;
 }
 .weatherDataCont{
-	display:flex;
-	
+	display:flex;	
 }
 
 .weatherExtraInfoCont{
