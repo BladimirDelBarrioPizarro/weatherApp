@@ -2,13 +2,15 @@
 	font-family: 'Sunflower', sans-serif;
 }
 
-.weatherDataCont{
+.weatherLocationCont{
 	display:flex;
 	align-items:center;
 	justify-content:center;
 	flex-direction:column;
 	flex-wrap:wrap;
-	
+}
+.weatherDataCont{
+	display:flex;
 	
 }
 
