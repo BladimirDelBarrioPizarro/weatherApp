@@ -9,6 +9,8 @@
 	justify-content:center;
 	flex-direction:column;
 	flex-wrap:wrap;
+	
+    background-color:#fff;
 }
 .weatherDataCont{
 	display:flex;	
@@ -38,6 +40,3 @@
 	
 }
 
-.locationList{
-	background-color:green;
-}
