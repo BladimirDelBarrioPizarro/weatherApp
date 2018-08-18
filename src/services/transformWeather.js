@@ -29,7 +29,7 @@ import convert from 'convert-units';
         else{
             return DATHAZE; 
         }
-         return DATHAZE;   
+          
     }
    
 
