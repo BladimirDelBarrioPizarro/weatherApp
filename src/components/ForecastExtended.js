@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import './style/style.css';
 import ForecastItem from './ForecastItem/index';
-
+import transformForecast from './../services/transformForecast';
 
 /*const days =[
     'Lunes',
@@ -38,12 +38,15 @@ class ForecastExtended extends Component{
         ).then(
             weatherData => {
                 console.log(weatherData);
+                const forecastData = transformForecast(weatherData);
+                console.log(forecastData);
+                this.setState({ forecastData })
             }
         )
     }
 
     renderForeCastItemDays(){
-        return "Render Items";
+        return <h1>"Render Items"</h1>;
       //  return days.map ( day => (<ForecastItem weekDay={day} hour={10} data={data}></ForecastItem>))
     }
 
