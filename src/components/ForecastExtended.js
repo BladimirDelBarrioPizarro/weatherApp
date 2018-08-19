@@ -20,11 +20,26 @@ const data = {
         humidity:'normal',
         wind:'normal'
 }*/
+//api.openweathermap.org/data/2.5/forecast?id={city ID}
+const APIKEY = '56de15b6daff254297d54efac8a85d46'; 
+const URL = 'http://api.openweathermap.org/data/2.5/forecast';
+
 class ForecastExtended extends Component{
     
     constructor(){
         super();
         this.state = {forecastData : null }
+    }
+    
+    componentDidMount(){
+        const url_forecast = `${URL}?q=${this.props.city}&appid=${APIKEY}`; 
+        fetch(url_forecast).then(
+            data => (data.json())
+        ).then(
+            weatherData => {
+                console.log(weatherData);
+            }
+        )
     }
 
     renderForeCastItemDays(){
