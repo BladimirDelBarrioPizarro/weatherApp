@@ -33,6 +33,20 @@ class WeatherLocation extends Component {
  componentWillMount(){
      console.log('componentWillMount');
      //this.handleUpdateClick();
+
+   /*   const {city} = this.state;
+      const APIWEATHER = `${URL}?q=${city}&appid=${APIKEY}`;
+        fetch(APIWEATHER).then(data => {
+          console.log('handleUpdateClick data: '+data);
+          return data.json();
+        }).then(weatherData => {
+            console.log('handleUpdateClick weatherData: '+weatherData);
+            const data = transformWeather(weatherData);
+            this.setState({data});
+        }); */
+ }
+ componentDidMount(){
+     console.log('componentDidMount');
       const {city} = this.state;
       const APIWEATHER = `${URL}?q=${city}&appid=${APIKEY}`;
         fetch(APIWEATHER).then(data => {
@@ -43,9 +57,6 @@ class WeatherLocation extends Component {
             const data = transformWeather(weatherData);
             this.setState({data});
         });
- }
- componentDidMount(){
-     console.log('componentDidMount');
  }
  componentWillUpdate(){
      console.log('componentWillUpdate');

@@ -4,7 +4,7 @@ import './style/style.css';
 import ForecastItem from './ForecastItem/index';
 
 
-const days =[
+/*const days =[
     'Lunes',
     'Martes',
     'Miercoles',
@@ -19,20 +19,34 @@ const data = {
         weaterState:10,
         humidity:'normal',
         wind:'normal'
-}
+}*/
 class ForecastExtended extends Component{
     
+    constructor(){
+        super();
+        this.state = {forecastData : null }
+    }
+
     renderForeCastItemDays(){
-        return days.map ( day => (<ForecastItem weekDay={day} hour={10} data={data}></ForecastItem>))
+        return "Render Items";
+      //  return days.map ( day => (<ForecastItem weekDay={day} hour={10} data={data}></ForecastItem>))
+    }
+
+
+    renderProgress  = () => {
+        return "Cargando pronóstico";
     }
 
     render(){
         const {city} = this.props;
-
+        const {forecastData} = this.state;
         return (
             <div >
                 <h3 className="forecast-title">Pronóstico extendido para {city}</h3>
-                {this.renderForeCastItemDays()}
+                { forecastData ?
+                  this.renderForeCastItemDays() :
+                  this.renderProgress()
+                }
            </div>
         )
     }
