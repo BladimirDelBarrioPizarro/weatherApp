@@ -16,6 +16,7 @@ class ForecastExtended extends Component{
         this.state = {forecastData : null }
     }
     
+    
     componentWillReceiveProps(nextProps){
         if(nextProps.city != this.props.city){
             this.setState({forecastData:null})
