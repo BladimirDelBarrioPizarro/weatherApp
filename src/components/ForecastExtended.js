@@ -4,22 +4,7 @@ import './style/style.css';
 import ForecastItem from './ForecastItem/index';
 import transformForecast from './../services/transformForecast';
 
-/*const days =[
-    'Lunes',
-    'Martes',
-    'Miercoles',
-    'Jueves',
-    'Viernes',
-    'Sabado',
-    'Domingo'
-];
 
-const data = {
-     temperature:10,
-        weaterState:10,
-        humidity:'normal',
-        wind:'normal'
-}*/
 //api.openweathermap.org/data/2.5/forecast?id={city ID}
 const APIKEY = '56de15b6daff254297d54efac8a85d46'; 
 const URL = 'http://api.openweathermap.org/data/2.5/forecast';
@@ -31,8 +16,14 @@ class ForecastExtended extends Component{
         this.state = {forecastData : null }
     }
     
-    componentDidMount(){
-        const url_forecast = `${URL}?q=${this.props.city}&appid=${APIKEY}`; 
+    componentWillReceiveProps(nextProps){
+        if(nextProps.city != this.props.city){
+            this.setState({forecastData:null})
+            this.updateCity(nextProps.city);
+        }
+    }
+    updateCity = city =>{
+         const url_forecast = `${URL}?q=${this.props.city}&appid=${APIKEY}`; 
         fetch(url_forecast).then(
             data => (data.json())
         ).then(
@@ -43,10 +34,16 @@ class ForecastExtended extends Component{
                 this.setState({ forecastData })
             }
         )
+     }
+     
+     
+    componentDidMount(){
+      this.updateCity(this.props.city); 
     }
+    
 
     renderForeCastItemDays(forecastData){
-       // return <h1>"Render Items"</h1>;
+       
        return forecastData.map ( forecast => (<ForecastItem key={`${forecast.weekDay}${forecast.hour}`} weekDay={forecast.weekDay} hour={forecast.hour} data={forecast.data}></ForecastItem>))
     }
 
