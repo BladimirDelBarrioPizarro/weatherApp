@@ -36,7 +36,7 @@ import convert from 'convert-units';
     const getTemp = (kelvin) =>{
         console.log('Kelvin: '+kelvin)
         console.log('Convert: '+convert(kelvin).from('K').to('C').toFixed(2));
-        return Number(convert(kelvin).from('K').to('C').toFixed(2))+11;    
+        return Number(convert(kelvin).from('K').to('C').toFixed(2))+4;    
     }
    
     const transformWeather = (weatherData) => {

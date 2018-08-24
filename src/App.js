@@ -10,7 +10,7 @@ import ForecastExtended from './components/ForecastExtended';
 const cities =  [
   'Las Rozas,es',
   'Barcelona,es',
-  'Aranda de Duero,es'
+  'Milagros,es'
 ];
 
 class App extends Component {
