@@ -7,6 +7,7 @@ import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
 import LocationList from './components/LocationList';
 import ForecastExtended from './components/ForecastExtended';
+import {setCity} from './actions';
 
 const cities =  [
   'Las Rozas,es',
@@ -17,8 +18,7 @@ const cities =  [
 //Create Store
 const store = createStore( () => {},
         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__ ()) ;
-// Action Creator setCity
-const setCity = value => ({ type: 'setCity', value});        
+     
 class App extends Component {
 
      constructor(){
@@ -30,7 +30,6 @@ class App extends Component {
   handleSelectedLocation = city => {
     this.setState({ city })
     console.log(`handleSelectionLocation ${city}`);
-    const action = { type: 'setCity', value:city}
     store.dispatch(setCity(city));
   }
    
